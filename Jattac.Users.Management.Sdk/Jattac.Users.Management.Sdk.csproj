@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CodeAnalysisRuleSet>../rocket.rules.ruleset</CodeAnalysisRuleSet>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <Version>1.0.0-beta01</Version>
+  </PropertyGroup>
+
+  
+
+<ItemGroup>
+    <None Include="../docs/*.md" Pack="true" PackagePath="\" />
+</ItemGroup>
+
+  
+
+<ItemGroup>
+  <PackageReference Include="Rocket.Libraries.FormValidationHelper" Version="2.15.1" />
+</ItemGroup>
+
+  <PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>Nyingi Maina</Authors>
+    <Company>Jattac Computing Company</Company>
+    <PackageDescription>Wrapper to simplify authentication with Jattac.User.Management service</PackageDescription>    
+    <RepositoryUrl>https://github.com/nyingimaina/Jattac.Users.Management.Sdk</RepositoryUrl>
+    <Description>Wrapper to simplify authentication with Jattac.User.Management service</Description>
+    <PackageTags>authentication, security</PackageTags>
+  </PropertyGroup>
+
+</Project>
