@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Rocket.Libraries.CallProxying.Models;
 using Rocket.Libraries.FormValidationHelper;
 
@@ -10,7 +6,7 @@ namespace Jattac.Users.Management.Sdk.Users
     /// <summary>
     /// Authenticates users
     /// </summary>
-    public class Authenticator
+    public class AuthenticationManager
     {
 
         /// <summary>
@@ -51,6 +47,12 @@ namespace Jattac.Users.Management.Sdk.Users
             }
 
             return signResponse.Payload.Entity;
+        }
+
+
+        public string TokenIsValid(string token)
+        {
+            throw new NotImplementedException();
         }
     }
 

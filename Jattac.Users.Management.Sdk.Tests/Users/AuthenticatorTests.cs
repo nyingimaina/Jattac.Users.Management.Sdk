@@ -27,7 +27,7 @@ namespace Jattac.Users.Management.Sdk.Tests.Users
             {
                 BaseUrl = "http://localhost:5141",
             });
-            var authenticator = new Authenticator();
+            var authenticator = new AuthenticationManager();
             var signInResponse = await authenticator.SignInAsync(
                 "test@example.com",
                 "test",
