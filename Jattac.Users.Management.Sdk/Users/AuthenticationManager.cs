@@ -52,6 +52,11 @@ namespace Jattac.Users.Management.Sdk.Users
         }
 
 
+        /// <summary>
+        /// Checks if a token is valid.
+        /// </summary>
+        /// <param name="token">The token to validate.</param>
+        /// <returns>True if the token is valid; otherwise, false.</returns>
         public async Task<bool> TokenIsValid(string token)
         {
             var rocketJwtTokenDecoder = new RocketJwtTokenDecoder(
@@ -59,6 +64,24 @@ namespace Jattac.Users.Management.Sdk.Users
             );
             var decodedToken = await rocketJwtTokenDecoder.DecodeTokenAsync(token);
             return true;
+        }
+
+        /// <summary>
+        /// Checks if a token has not expired.
+        /// </summary>
+        /// <param name="token">The token to check.</param>
+        /// <returns>True if the token has not expired; otherwise, false.</returns>
+        /// <remarks>
+        /// IMPORTANT: This method does not check if the token is valid. It only checks if the token has not expired.
+        /// To check if the token is valid, use the <see cref="TokenIsValid"/> method.
+        /// </remarks>
+        public bool TokenHasNotExpired(string token)
+        {
+            var rocketJwtTokenDecoder = new RocketJwtTokenDecoder(
+                JattacUserManagementConfigurationManager.configurationSettings.RocketJwtSecretProvider
+            );
+            var tokenDescription = rocketJwtTokenDecoder.GetTokenDescription(token);
+            return tokenDescription.IsExpired == false;
         }
     }
 
