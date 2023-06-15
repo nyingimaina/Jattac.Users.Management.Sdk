@@ -7,7 +7,7 @@
     <CodeAnalysisRuleSet>../rocket.rules.ruleset</CodeAnalysisRuleSet>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <Version>1.0.0-beta01</Version>
+    <Version>1.0.0-beta02</Version>
   </PropertyGroup>
 
   
@@ -20,8 +20,6 @@
 
 <ItemGroup>
   <PackageReference Include="Rocket.Libraries.Auth" Version="1.0.2" />
-  <PackageReference Include="Rocket.Libraries.CallProxy" Version="1.1.5" />
-  <PackageReference Include="Rocket.Libraries.FormValidationHelper" Version="2.15.1" />
 </ItemGroup>
 
   <PropertyGroup>

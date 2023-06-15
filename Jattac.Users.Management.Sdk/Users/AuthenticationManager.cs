@@ -1,7 +1,6 @@
 using Jattac.Users.Management.Sdk.Configuration;
+using Jattac.Users.Management.Sdk.DataTransferObjects;
 using Rocket.Libraries.Auth;
-using Rocket.Libraries.CallProxying.Models;
-using Rocket.Libraries.FormValidationHelper;
 
 namespace Jattac.Users.Management.Sdk.Users
 {
