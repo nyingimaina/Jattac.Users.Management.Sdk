@@ -33,7 +33,11 @@ namespace Jattac.Users.Management.Sdk
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
-                var deserializedResponse = JsonSerializer.Deserialize<TResponse>(responseString);
+                var deserializedResponse = JsonSerializer.Deserialize<TResponse>(responseString, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
                 if (deserializedResponse != null)
                 {
                     return deserializedResponse;
