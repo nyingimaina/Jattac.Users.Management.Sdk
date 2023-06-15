@@ -1,3 +1,5 @@
+using Jattac.Users.Management.Sdk.Configuration;
+using Rocket.Libraries.Auth;
 using Rocket.Libraries.CallProxying.Models;
 using Rocket.Libraries.FormValidationHelper;
 
@@ -50,9 +52,13 @@ namespace Jattac.Users.Management.Sdk.Users
         }
 
 
-        public string TokenIsValid(string token)
+        public async Task<bool> TokenIsValid(string token)
         {
-            throw new NotImplementedException();
+            var rocketJwtTokenDecoder = new RocketJwtTokenDecoder(
+                JattacUserManagementConfigurationManager.configurationSettings.RocketJwtSecretProvider
+            );
+            var decodedToken = await rocketJwtTokenDecoder.DecodeTokenAsync(token);
+            return true;
         }
     }
 
