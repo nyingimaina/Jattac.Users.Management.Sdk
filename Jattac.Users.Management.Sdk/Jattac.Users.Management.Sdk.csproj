@@ -7,7 +7,7 @@
     <CodeAnalysisRuleSet>../rocket.rules.ruleset</CodeAnalysisRuleSet>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <Version>1.0.0-beta02</Version>
+    <Version>1.0.0-beta03</Version>
   </PropertyGroup>
 
   

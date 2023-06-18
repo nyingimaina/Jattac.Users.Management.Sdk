@@ -76,11 +76,28 @@ namespace Jattac.Users.Management.Sdk.Users
         /// </remarks>
         public bool TokenHasNotExpired(string token)
         {
+            var tokenDescription = GetTokenDescription(token);
+            return tokenDescription.IsExpired == false;
+        }
+
+        /// <summary>
+        /// Gets the expiry date of a token. If the token has expired, the expiry date will be in the past.
+        /// </summary>
+        /// <param name="token">The token to check.</param>
+        /// <returns>The expiry date of the token.</returns>
+        public DateTimeOffset GetTokenExpiryDate(string token)
+        {
+
+            var tokenDescription = GetTokenDescription(token);
+            return tokenDescription.Expires;
+        }
+
+        private TokenDescription GetTokenDescription(string token)
+        {
             var rocketJwtTokenDecoder = new RocketJwtTokenDecoder(
                 JattacUserManagementConfigurationManager.configurationSettings.RocketJwtSecretProvider
             );
-            var tokenDescription = rocketJwtTokenDecoder.GetTokenDescription(token);
-            return tokenDescription.IsExpired == false;
+            return rocketJwtTokenDecoder.GetTokenDescription(token);
         }
     }
 
